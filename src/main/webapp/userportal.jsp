@@ -46,9 +46,9 @@ information accordingly -->
 <!-- For each user in the database, Edit/Delete
 buttons which invokes the edit/delete functions -->
 <td>
-<a href="edit?name=<c:out value='${user.email}'
+<a href="edit?email=<c:out value='${user.email}'
 />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="delete?name=<c:out
+<a href="delete?email=<c:out
 value='${user.email}' />">Delete</a>
 </td>
 </tr>
