@@ -62,11 +62,12 @@ public class RegisterServlet extends HttpServlet {
 		 int i = ps.executeUpdate();
 		//Step 7: check if the query had been successfully execute, return “You are successfullyregistered” via the response,
 		 if (i > 0){
-		PrintWriter writer = response.getWriter();
-		writer.println("<h1>" + "You have successfully registered an account!" +
-		"</h1>");
+//		PrintWriter writer = response.getWriter();
+//		writer.println("<h1>" + "You have successfully registered an account!" +
+//		"</h1>");
 		
-		writer.close();
+		//writer.close();
+			 response.sendRedirect("http://localhost:8080/devopsproject/login.jsp");
 		}
 		}
 		//Step 8: catch and print out any exception

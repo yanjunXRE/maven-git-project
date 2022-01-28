@@ -47,6 +47,7 @@ information accordingly -->
 buttons which invokes the edit/delete functions -->
 <td>
 <a href="edit?email=<c:out value='${user.email}'
+/>&password=<c:out value='${user.password}'
 />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="delete?email=<c:out
 value='${user.email}' />">Delete</a>
