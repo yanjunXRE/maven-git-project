@@ -29,10 +29,12 @@ public class UserServlet extends HttpServlet {
     //Step 2: Prepare list of SQL prepared statements to perform CRUD to our database
     private static final String INSERT_USERS_SQL = "INSERT INTO user" + " (email,password) VALUES " + " (?, ?);";
     private static final String SELECT_USER_BY_ID = "select email,password from user where email =?";
+    private static final String SELECT_USER_PASS = "select email,password from user where email =?&& password=?";
     private static final String SELECT_ALL_USERS = "select * from user ";
     private static final String DELETE_USERS_SQL = "delete from user where email = ?;";
     private static final String UPDATE_USERS_SQL = "update user set email = ?,password= ? where email = ?;";
-    //Step 3: Implement the getConnection method which facilitates connection to the database viaJDBC
+    
+    		    //Step 3: Implement the getConnection method which facilitates connection to the database viaJDBC
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -74,6 +76,7 @@ public class UserServlet extends HttpServlet {
 		 case "/UserServlet/dashboard":
 		 listUsers(request, response);
 		 break;
+		
 		 }
 		 } catch (SQLException ex) {
 		 throw new ServletException(ex);
@@ -106,38 +109,52 @@ public class UserServlet extends HttpServlet {
 	// Step 5.4: Set the users list into the listUsers attribute to be pass to the userportal.jsp
 	request.setAttribute("listUsers", users);
 	request.getRequestDispatcher("/userportal.jsp").forward(request, response);
-	}
+	 }
+	
+
 	
 	//method to get parameter, query database for existing user data and redirect to user edit page
 		private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 		throws SQLException, ServletException, IOException {
 		//get parameter passed in the URL
 		String name = request.getParameter("email");
+		String pwd = request.getParameter("password");
 		user existingUser = new user("", "");
+		if(!name.isEmpty()&&!pwd.isEmpty()) {
 		// Step 1: Establishing a Connection
 		try (Connection connection = getConnection();
 		// Step 2:Create a statement using connection object
+				
 		PreparedStatement preparedStatement =
-		connection.prepareStatement(SELECT_USER_BY_ID);) {
+		connection.prepareStatement(SELECT_USER_PASS);) {
 		preparedStatement.setString(1, name);
+		preparedStatement.setString(2, pwd);
 		// Step 3: Execute the query or update query
 		ResultSet rs = preparedStatement.executeQuery();
 		// Step 4: Process the ResultSet object
+	
 		while (rs.next()) {
-		
+			
 		//System.out.println("name is "+name);
 
 		String password = rs.getString("password");
 		String email = rs.getString("email");
 		
 		existingUser = new user (password,email);
-		}
+			}
+		
 		} catch (SQLException e) {
 		System.out.println(e.getMessage());
+		
 		}
 		//Step 5: Set existingUser to request and serve up the userEdit form
+		
 		request.setAttribute("user", existingUser);
 		request.getRequestDispatcher("/userEdit.jsp").forward(request, response);
+		}else {
+			 response.sendRedirect("http://localhost:8080/devopsproject/login.jsp");
+		}
+				
 		}
 		
 		
