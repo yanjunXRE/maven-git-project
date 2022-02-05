@@ -58,12 +58,12 @@ value='${forum.text}' />" class="form-control" name="text">
 value='${forum.type}' />" class="form-control" name="type">
 </fieldset>
 
+
 </fieldset>
 <button type="submit" class="btn btn-success">Save</button>
 </form>
 </div>
 </div>
 </div>
-
 </body>
 </html>

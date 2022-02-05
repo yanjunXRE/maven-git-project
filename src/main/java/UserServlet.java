@@ -27,8 +27,8 @@ public class UserServlet extends HttpServlet {
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
     //Step 2: Prepare list of SQL prepared statements to perform CRUD to our database
-    private static final String INSERT_USERS_SQL = "INSERT INTO user" + " (email,password) VALUES " + " (?, ?);";
-    private static final String SELECT_USER_BY_ID = "select email,password from user where email =?";
+   // private static final String INSERT_USERS_SQL = "INSERT INTO user" + " (email,password) VALUES " + " (?, ?);";
+ //   private static final String SELECT_USER_BY_ID = "select email,password from user where email =?";
     private static final String SELECT_USER_PASS = "select email,password from user where email =?&& password=?";
     private static final String SELECT_ALL_USERS = "select * from user ";
     private static final String DELETE_USERS_SQL = "delete from user where email = ?;";
