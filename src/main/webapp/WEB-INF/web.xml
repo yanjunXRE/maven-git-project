@@ -32,7 +32,7 @@
  </servlet-mapping>
  <servlet-mapping>
  <servlet-name>GuideServlet</servlet-name>
-<url-pattern>/GuideServlet</url-pattern>
+<url-pattern>/GuideServlet/dashboard</url-pattern>
  <url-pattern>/GuideServlet/edit</url-pattern>
  <url-pattern>/GuideServlet/update</url-pattern>
  <url-pattern>/GuideServlet/delete</url-pattern>
