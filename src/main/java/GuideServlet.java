@@ -36,7 +36,7 @@ public class GuideServlet extends HttpServlet {
 			  protected Connection getConnection() {
 				  Connection connection = null;
 				  try {
-				  Class.forName("com.mysql.jdbc.Driver");
+				  Class.forName("com.mysql.cj.jdbc.Driver");
 				  connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 				  } catch (SQLException e) {
 				  e.printStackTrace();
@@ -69,8 +69,8 @@ public class GuideServlet extends HttpServlet {
 		 case "/GuideServlet/update":
 			 updateForum(request, response);
 		 break;
-		 default:
-		// case"/GuideServlet/dashboard":
+		 //default:
+		 case"/GuideServlet/dashboard":
 		 listForums(request, response);
 		 break;
 		 }
@@ -158,21 +158,21 @@ public class GuideServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			
-			 response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet");
+			 response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet/dashboard");
 			}
 	
 	private void deleteForum(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 			//Step 1: Retrieve value from the request
-			 String title = request.getParameter("title");
+			 String name = request.getParameter("title");
 			 //Step 2: Attempt connection with database and execute delete user SQL query
 			 try (Connection connection = getConnection(); PreparedStatement statement =
 			connection.prepareStatement(DELETE_FORUM_SQL);) {
-			 statement.setString(1, title);
+			 statement.setString(1, name);
 			 int i = statement.executeUpdate();
 			 }
 			 
-			 response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet");
+			 response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet/dashboard");
 			}
 	
 		
