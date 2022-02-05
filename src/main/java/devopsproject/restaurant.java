@@ -2,10 +2,48 @@ package devopsproject;
 
 public class restaurant {
 
-	private int id;
-	private String name;
-	private String address;
-	private String image;
-	private int phone;
-	private String description;
+	protected String name;
+	public restaurant(String name, String address, String image, int phone, String description) {
+		super();
+		this.name = name;
+		this.address = address;
+		this.image = image;
+		this.phone = phone;
+		this.description = description;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public int getPhone() {
+		return phone;
+	}
+	
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	protected String address;
+	protected String image;
+	protected int phone;
+	protected String description;
 }
