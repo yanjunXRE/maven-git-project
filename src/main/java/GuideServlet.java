@@ -61,13 +61,15 @@ public class GuideServlet extends HttpServlet {
 		 switch (action) {
 		 
 		 case "/GuideServlet/delete":
-		//deleteForum(request, response);
+		deleteForum(request, response);
 		 break;
 		 case "/GuideServlet/edit":
+			 showEditForm(request,response);
 		 break;
 		 case "/GuideServlet/update":
+			 updateForum(request, response);
 		 break;
-		 default:
+		// default:
 		 //case"/GuideServlet/dashboard":
 		 listForums(request, response);
 		 break;
@@ -107,9 +109,10 @@ public class GuideServlet extends HttpServlet {
 		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
 		
 		request.setAttribute("listForums", forums);
-		request.getRequestDispatcher("/forum.jsp").forward(request, response);
+		request.getRequestDispatcher("/forum.jsp").forward(request, response);}
+	
 		
-
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
