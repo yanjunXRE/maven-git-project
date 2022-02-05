@@ -58,10 +58,11 @@ public class ForumServlet extends HttpServlet {
 			 int i = ps.executeUpdate();
 			
 			 if (i > 0){
-			PrintWriter writer = response.getWriter();
-			writer.println("<h1>" + "You have successfully registered an account!" +
-			"</h1>");
-			writer.close();
+			//PrintWriter writer = response.getWriter();
+			//writer.println("<h1>" + "You have successfully registered an account!" +
+		//	"</h1>");
+		//	writer.close();
+			response.sendRedirect("http://localhost:8090/devopsproject/forum.jsp");
 			}
 			}
 			//Step 8: catch and print out any exception
