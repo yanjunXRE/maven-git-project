@@ -63,7 +63,7 @@ public class ForumServlet extends HttpServlet {
 			//writer.println("<h1>" + "You have successfully registered an account!" +
 		//	"</h1>");
 		//	writer.close();
-			response.sendRedirect("http://localhost:8090/devopsproject/forum.jsp");
+			response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet");
 			}
 			}
 			//Step 8: catch and print out any exception
