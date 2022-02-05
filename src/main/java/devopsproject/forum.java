@@ -28,6 +28,7 @@ public String getText() {
 public void setText(String text) {
 	this.text = text;
 }
+
 public forum(String title, String type, String text) {
 	super();
 	this.title = title;

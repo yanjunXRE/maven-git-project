@@ -50,6 +50,7 @@ public class ForumServlet extends HttpServlet {
 			
 			 PreparedStatement ps = con.prepareStatement("insert into forum(title,text,type) values(?,?,?)");
 			
+			 
 			 ps.setString(1, title);
 			 ps.setString(2, text);
 			 ps.setString(3, type);

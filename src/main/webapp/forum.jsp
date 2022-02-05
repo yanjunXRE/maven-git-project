@@ -46,6 +46,7 @@ crossorigin="anonymous">
 </thead>
 <!-- Pass in the list of users receive via the Servlet’s response to a loop
 -->
+
 <tbody>
 <c:forEach var="forum" items="${listForums}">
 <!-- For each user in the database, display their

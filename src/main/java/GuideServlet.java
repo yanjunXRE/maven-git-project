@@ -78,6 +78,7 @@ public class GuideServlet extends HttpServlet {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
