@@ -17,6 +17,10 @@
  <servlet-name>GuideServlet</servlet-name>
  <servlet-class>GuideServlet</servlet-class>
  </servlet>
+   <servlet>
+ <servlet-name>RestaurantV2Servlet</servlet-name>
+ <servlet-class>RestaurantV2Servlet</servlet-class>
+ </servlet>
 
  <servlet-mapping>
  <servlet-name>UserServlet</servlet-name>
@@ -32,5 +36,12 @@
  <url-pattern>/GuideServlet/edit</url-pattern>
  <url-pattern>/GuideServlet/update</url-pattern>
  <url-pattern>/GuideServlet/delete</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ <servlet-name>RestaurantV2Servlet</servlet-name>
+<url-pattern>/RestaurantV2Servlet/dashboard</url-pattern>
+ <url-pattern>/RestaurantV2Servlet/edit</url-pattern>
+ <url-pattern>/RestaurantV2Servlet/update</url-pattern>
+ <url-pattern>/RestaurantV2Servlet/delete</url-pattern>
  </servlet-mapping>
 </web-app>
