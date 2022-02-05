@@ -28,7 +28,7 @@ public class GuideServlet extends HttpServlet {
 	 private String jdbcPassword = "password";
 	 
 	 private static final String INSERT_FORUM_SQL = "INSERT INTO forum" + " (title,text,type) VALUES " +" (?, ?, ?);";
-			 // private static final String SELECT_USER_BY_ID = "select name,password,email,language from UserDetails where name =?";
+			  private static final String SELECT_FORUM_BY_ID = "select title,text,type from forum where title =?";
 			  private static final String SELECT_ALL_FORUM = "select * from forum ";
 			  private static final String DELETE_FORUM_SQL = "delete from forum where title = ?;";
 			  private static final String UPDATE_FORUM_SQL = "update forum set title = ?,text= ?, type =? where title = ?;";
@@ -111,6 +111,35 @@ public class GuideServlet extends HttpServlet {
 		request.setAttribute("listForums", forums);
 		request.getRequestDispatcher("/forum.jsp").forward(request, response);}
 	
+	
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, ServletException, IOException {
+			//get parameter passed in the URL
+			String name = request.getParameter("title");
+			forum existingUser = new forum("", "", "");
+			// Step 1: Establishing a Connection
+			try (Connection connection = getConnection();
+			// Step 2:Create a statement using connection object
+			PreparedStatement preparedStatement =
+			connection.prepareStatement(SELECT_forum_BY_ID);) {
+			preparedStatement.setString(1, name);
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+			// Step 4: Process the ResultSet object
+			while (rs.next()) {
+			name = rs.getString("name");
+			String password = rs.getString("password");
+			String email = rs.getString("email");
+			String language = rs.getString("language");
+			existingUser = new User(name, password, email, language);
+			}
+			} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			}
+			//Step 5: Set existingUser to request and serve up the userEdit form
+			request.setAttribute("user", existingUser);
+			request.getRequestDispatcher("/userEdit.jsp").forward(request, response);
+			}
 		
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
