@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -177,7 +179,37 @@ public class GuideServlet extends HttpServlet {
 	
 		
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+			response.setContentType("text/html");
+			// TODO Auto-generated method stub
+			PrintWriter out = response.getWriter();
+			String title = request.getParameter("title");
+			String text = request.getParameter("text");
+			String type = request.getParameter("type");
+			try {
+				 Class.forName("com.mysql.cj.jdbc.Driver");
+				 Connection con = DriverManager.getConnection(
+				 "jdbc:mysql://localhost:3306/forum", "root", "password");
+				
+				 PreparedStatement ps = con.prepareStatement("insert into forum(title,text,type) values(?,?,?)");
+				
+				 
+				 ps.setString(1, title);
+				 ps.setString(2, text);
+				 ps.setString(3, type);
+				
+				//Step 6: perform the query on the database using the prepared statement
+				 int i = ps.executeUpdate();
+				
+				 if (i > 0){
+				
+				response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet/dashboard");
+				}
+				}
+				//Step 8: catch and print out any exception
+				catch (Exception exception) {
+				 System.out.println(exception);
+				 out.close();
+			doGet(request, response);
 	}
 
-}
+}}
