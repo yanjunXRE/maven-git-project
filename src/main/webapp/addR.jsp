@@ -13,7 +13,7 @@
 </head>
 <body> 
 
-	<form action="RestaurantServlet" method="post">
+	<form action="dashboard" method="post">
 		Name: <input type="text" name="name"> Address: <input
 			type="text" name="address"> Image: <input type="text"
 			name="image"> Phone: <input type="text" name="phone">

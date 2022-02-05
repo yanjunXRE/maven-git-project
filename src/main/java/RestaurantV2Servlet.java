@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -155,7 +157,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String image = request.getParameter("image");
-		// int phone = Integer.parseInt(getParameter("phone"));
+		//int phone = Integer.parseInt(getParameter("phone"));
 		String description = request.getParameter("description");
 
 		// Step 2: Attempt connection with database and execute update user SQL query
@@ -164,7 +166,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 			statement.setString(1, name);
 			statement.setString(2, address);
 			statement.setString(3, image);
-			// statement.setInt(4, phone);
+			//statement.setInt(4, phone);
 			statement.setString(5, description);
 			statement.setString(6, oriName);
 			int i = statement.executeUpdate();
@@ -192,6 +194,41 @@ public class RestaurantV2Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("name");
+		String address = request.getParameter("address");
+		String image = request.getParameter("image");
+		String phone = request.getParameter("phone");
+		String description = request.getParameter("description");
+		try {
+			 Class.forName("com.mysql.jdbc.Driver");
+			 Connection con = DriverManager.getConnection(
+			 "jdbc:mysql://localhost:3306/restaurantdetails", "root", "password");
+			 PreparedStatement ps = con.prepareStatement("insert into restaurantdetails(name,address,image,phone,description) values(?,?,?,?,?)");
+			 ps.setString(1, name);
+			 ps.setString(2, address);
+			 ps.setString(3, image);
+			 ps.setString(4, phone);
+			 ps.setString(5, description);
+			
+			//Step 6: perform the query on the database using the prepared statement
+			 int i = ps.executeUpdate();
+			
+			 if (i > 0){
+			PrintWriter writer = response.getWriter();
+			writer.println("<h1>" + "You have successfully added a restaurant!" +
+			"</h1>");
+			writer.close();
+			}
+			}
+			//Step 8: catch and print out any exception
+			catch (Exception exception) {
+			 System.out.println(exception);
+			 out.close();
+			}
+
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
