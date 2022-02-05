@@ -13,6 +13,10 @@
  <servlet-name>UserServlet</servlet-name>
  <servlet-class>UserServlet</servlet-class>
  </servlet>
+  <servlet>
+ <servlet-name>GuideServlet</servlet-name>
+ <servlet-class>GuideServlet</servlet-class>
+ </servlet>
 
  <servlet-mapping>
  <servlet-name>UserServlet</servlet-name>
@@ -21,5 +25,12 @@
  <url-pattern>/UserServlet/edit</url-pattern>
  <url-pattern>/UserServlet/update</url-pattern>
  <url-pattern>/UserServlet/delete</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ <servlet-name>GuideServlet</servlet-name>
+<url-pattern>/GuideServlet</url-pattern>
+ <url-pattern>/GuideServlet/edit</url-pattern>
+ <url-pattern>/GuideServlet/update</url-pattern>
+ <url-pattern>/GuideServlet/delete</url-pattern>
  </servlet-mapping>
 </web-app>
