@@ -137,7 +137,30 @@ public class GuideServlet extends HttpServlet {
 			}
 			//Step 5: Set existingUser to request and serve up the userEdit form
 			request.setAttribute("forum", existingForum);
-			request.getRequestDispatcher("/userEdit.jsp").forward(request, response);
+			request.getRequestDispatcher("/forumEdit.jsp").forward(request, response);
+			}
+	
+	
+	private void updateForum(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException {
+			//Step 1: Retrieve value from the request
+			String oriName = request.getParameter("oriName");
+			 String title = request.getParameter("title");
+			 String text = request.getParameter("text");
+			 String type = request.getParameter("type");
+			
+
+			 //Step 2: Attempt connection with database and execute update user SQL query
+			 try (Connection connection = getConnection(); PreparedStatement statement =
+			connection.prepareStatement(UPDATE_FORUM_SQL);) {
+			 statement.setString(1, title);
+			 statement.setString(2, text);
+			 statement.setString(3, type);
+			 statement.setString(4, oriName);
+			 int i = statement.executeUpdate();
+			 }
+			
+			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
 			}
 		
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
