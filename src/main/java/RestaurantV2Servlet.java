@@ -196,7 +196,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter(); 
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String image = request.getParameter("image");
