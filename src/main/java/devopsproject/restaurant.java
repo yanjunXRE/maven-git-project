@@ -29,7 +29,7 @@ public class restaurant {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getPhone() {
+	public String getPhone() { 
 		return phone;
 	}
 	

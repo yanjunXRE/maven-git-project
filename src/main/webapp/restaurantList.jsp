@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container"> 
 		<h2>Add Restaurant</h2>
 		<form action="RestaurantServlet" method="post">
 			<div class="form-group">

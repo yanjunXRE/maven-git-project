@@ -44,7 +44,7 @@ public class RestaurantServlet extends HttpServlet {
 		String image = request.getParameter("image");
 		String phone = request.getParameter("phone");
 		String description = request.getParameter("description");
-		try {
+		try { 
 			 Class.forName("com.mysql.jdbc.Driver");
 			 Connection con = DriverManager.getConnection(
 			 "jdbc:mysql://localhost:3306/restaurantdetails", "root", "password");

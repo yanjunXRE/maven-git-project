@@ -152,7 +152,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 
 	// method to update the user table base on the form data
 	private void updateUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
-		// Step 1: Retrieve value from the request
+		// Step 1: Retrieve value from the request 
 		String oriName = request.getParameter("oriName");
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
