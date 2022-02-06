@@ -66,10 +66,7 @@ value='${forum.type}' />" class="form-control" name="type">
 </div>
 </div>
 </div>
-=======
-</head>
-<body>
 
->>>>>>> branch 'forum' of https://github.com/yanjunXRE/maven-git-project.git
-</body>
+
+
 </html>

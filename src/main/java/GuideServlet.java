@@ -71,11 +71,9 @@ public class GuideServlet extends HttpServlet {
 		 case "/GuideServlet/update":
 			 updateForum(request, response);
 		 break;
-<<<<<<< HEAD
-		 //default:
-=======
+
 		// default:
->>>>>>> branch 'forum' of https://github.com/yanjunXRE/maven-git-project.git
+
 		 case"/GuideServlet/dashboard":
 		 listForums(request, response);
 		 break;

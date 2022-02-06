@@ -13,7 +13,7 @@
  <servlet-name>UserServlet</servlet-name>
  <servlet-class>UserServlet</servlet-class>
  </servlet>
-<<<<<<< HEAD
+
   <servlet>
  <servlet-name>GuideServlet</servlet-name>
  <servlet-class>GuideServlet</servlet-class>
@@ -22,13 +22,9 @@
  <servlet-name>RestaurantV2Servlet</servlet-name>
  <servlet-class>RestaurantV2Servlet</servlet-class>
  </servlet>
-=======
- <servlet>
- <servlet-name>GuideServlet</servlet-name>
- <servlet-class>GuideServlet</servlet-class>
- </servlet>
+
  
->>>>>>> branch 'forum' of https://github.com/yanjunXRE/maven-git-project.git
+
 
  <servlet-mapping>
  <servlet-name>UserServlet</servlet-name>
@@ -41,7 +37,7 @@
  <servlet-mapping>
  <servlet-name>GuideServlet</servlet-name>
 <url-pattern>/GuideServlet/dashboard</url-pattern>
-<<<<<<< HEAD
+
  <url-pattern>/GuideServlet/edit</url-pattern>
  <url-pattern>/GuideServlet/update</url-pattern>
  <url-pattern>/GuideServlet/delete</url-pattern>
@@ -52,11 +48,7 @@
  <url-pattern>/RestaurantV2Servlet/edit</url-pattern>
  <url-pattern>/RestaurantV2Servlet/update</url-pattern>
  <url-pattern>/RestaurantV2Servlet/delete</url-pattern>
-=======
 
- <url-pattern>/GuideServlet/edit</url-pattern>
- <url-pattern>/GuideServlet/update</url-pattern>
- <url-pattern>/GuideServlet/delete</url-pattern>
->>>>>>> branch 'forum' of https://github.com/yanjunXRE/maven-git-project.git
+
  </servlet-mapping>
 </web-app>

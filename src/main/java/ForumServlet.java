@@ -60,7 +60,7 @@ public class ForumServlet extends HttpServlet {
 			
 			 if (i > 0){
 			
-			response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet/dashboard");
+			response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
 			}
 			}
 			//Step 8: catch and print out any exception
