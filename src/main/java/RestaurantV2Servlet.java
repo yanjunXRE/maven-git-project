@@ -157,7 +157,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String image = request.getParameter("image");
-		//int phone = Integer.parseInt(getParameter("phone"));
+		int phone = Integer.parseInt(getInitParameter("phone"));
 		String description = request.getParameter("description");
 
 		// Step 2: Attempt connection with database and execute update user SQL query
@@ -166,7 +166,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 			statement.setString(1, name);
 			statement.setString(2, address);
 			statement.setString(3, image);
-			//statement.setInt(4, phone);
+			statement.setInt(4, phone);
 			statement.setString(5, description);
 			statement.setString(6, oriName);
 			int i = statement.executeUpdate();
