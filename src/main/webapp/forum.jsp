@@ -33,6 +33,7 @@ crossorigin="anonymous">
 <th>Text</th>
 <th>Type</th>
 
+
 <th>Actions</th>
 </tr>
 </thead>
