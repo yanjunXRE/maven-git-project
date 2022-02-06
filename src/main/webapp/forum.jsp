@@ -13,15 +13,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 crossorigin="anonymous">
 </head>
 <body>
-<form action="dashboard" method="post">
-	Title: <input type="text" name="title">
-	Text: <input type="text" name="text">
-	type: <select name="type">
-		<option>question</option>
-		<option>guide</option>
-		<option>others</option>
-	</select>
-	<input type="submit" value="submit"/>
+<form action="http://localhost:8085/devopsproject/AddForum.jsp">
+<input type="submit" value="add new comment">
 </form>
 
 <div class="row">
@@ -37,14 +30,12 @@ crossorigin="anonymous">
 <thead>
 <tr>
 <th>title</th>
-<th>Type</th>
 <th>Text</th>
-
+<th>Type</th>
 
 <th>Actions</th>
 </tr>
 </thead>
-
 
 <tbody>
 <c:forEach var="forum" items="${listForums}">
@@ -54,13 +45,13 @@ information accordingly -->
 <td>
 <c:out value="${forum.title}" />
 </td>
-
-<td>
-<c:out value="${forum.type}" />
-</td>
 <td>
 <c:out value="${forum.text}" />
 </td>
+<td>
+<c:out value="${forum.type}" />
+</td>
+
 
 <!-- For each user in the database, Edit/Delete
 buttons which invokes the edit/delete functions -->
