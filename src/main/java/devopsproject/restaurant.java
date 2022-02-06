@@ -3,7 +3,7 @@ package devopsproject;
 public class restaurant {
 
 	protected String name;
-	public restaurant(String name, String address, String image, int phone, String description) {
+	public restaurant(String name, String address, String image, String phone, String description) {
 		super();
 		this.name = name;
 		this.address = address;
@@ -29,11 +29,11 @@ public class restaurant {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 	
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getDescription() {
@@ -44,6 +44,6 @@ public class restaurant {
 	}
 	protected String address;
 	protected String image;
-	protected int phone;
+	protected String phone;
 	protected String description;
 }

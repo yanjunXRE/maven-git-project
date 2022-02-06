@@ -13,18 +13,16 @@
 </head>
 <body> 
 
-	<form action="dashboard" method="post">
-		Name: <input type="text" name="name"> Address: <input
-			type="text" name="address"> Image: <input type="text"
-			name="image"> Phone: <input type="text" name="phone">
-		Description: <input type="text" name="description"> <input
-			type="submit" value="submit" />
-	</form>
 
 	<div class="row">
 		<div class="container">
 			<h3 class="text-center">List of Restaurants</h3>
 			<hr>
+			<div class="container text-left">
+				<!-- Add new user button redirects to the register.jsp page -->
+				<a href="<%=request.getContextPath()%>/restaurantList.jsp"
+					class="btn btn-success">Add New Restaurant</a>
+			</div>
 			<br>
 			<!-- Create a table to list out all current users information -->
 			<table class="table">

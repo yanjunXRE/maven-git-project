@@ -106,7 +106,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 				String name = rs.getString("name");
 				String address = rs.getString("address");
 				String image = rs.getString("image");
-				int phone = rs.getInt("phone");
+				String phone = rs.getString("phone");
 				String description = rs.getString("description");
 				restaurants.add(new restaurant(name, address, image, phone, description));
 			}
@@ -125,7 +125,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
 		String name = request.getParameter("name");
-		restaurant existingUser = new restaurant("", "", "", 0, "");
+		restaurant existingUser = new restaurant("", "", "", "", "");
 		// Step 1: Establishing a Connection
 		try (Connection connection = getConnection();
 				// Step 2:Create a statement using connection object
@@ -138,7 +138,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 				name = rs.getString("name");
 				String address = rs.getString("address");
 				String image = rs.getString("image");
-				int phone = rs.getInt("phone");
+				String phone = rs.getString("phone");
 				String description = rs.getString("description");
 				existingUser = new restaurant(name, address, image, phone, description);
 			}
@@ -157,7 +157,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		String image = request.getParameter("image");
-		int phone = Integer.parseInt(getInitParameter("phone"));
+		String phone = request.getParameter("phone");
 		String description = request.getParameter("description");
 
 		// Step 2: Attempt connection with database and execute update user SQL query
@@ -166,7 +166,7 @@ public class RestaurantV2Servlet extends HttpServlet {
 			statement.setString(1, name);
 			statement.setString(2, address);
 			statement.setString(3, image);
-			statement.setInt(4, phone);
+			statement.setString(4, phone);
 			statement.setString(5, description);
 			statement.setString(6, oriName);
 			int i = statement.executeUpdate();
@@ -194,41 +194,6 @@ public class RestaurantV2Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter(); 
-		String name = request.getParameter("name");
-		String address = request.getParameter("address");
-		String image = request.getParameter("image");
-		String phone = request.getParameter("phone");
-		String description = request.getParameter("description");
-		try {
-			 Class.forName("com.mysql.jdbc.Driver");
-			 Connection con = DriverManager.getConnection(
-			 "jdbc:mysql://localhost:3306/restaurantdetails", "root", "password");
-			 PreparedStatement ps = con.prepareStatement("insert into restaurantdetails(name,address,image,phone,description) values(?,?,?,?,?)");
-			 ps.setString(1, name);
-			 ps.setString(2, address);
-			 ps.setString(3, image);
-			 ps.setString(4, phone);
-			 ps.setString(5, description);
-			
-			//Step 6: perform the query on the database using the prepared statement
-			 int i = ps.executeUpdate();
-			
-			 if (i > 0){
-			PrintWriter writer = response.getWriter();
-			writer.println("<h1>" + "You have successfully added a restaurant!" +
-			"</h1>");
-			writer.close();
-			}
-			}
-			//Step 8: catch and print out any exception
-			catch (Exception exception) {
-			 System.out.println(exception);
-			 out.close();
-			}
-
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
