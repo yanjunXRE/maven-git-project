@@ -29,7 +29,7 @@ public class GuideServlet extends HttpServlet {
 	 private String jdbcUsername = "root";
 	 private String jdbcPassword = "password";
 	 
-	 private static final String INSERT_FORUM_SQL = "INSERT INTO forum" + " (title,text,type) VALUES " +" (?, ?, ?);";
+	// private static final String INSERT_FORUM_SQL = "INSERT INTO forum" + " (title,text,type) VALUES " +" (?, ?, ?);";
 			  private static final String SELECT_FORUM_BY_ID = "select title,text,type from forum where title =?";
 			  private static final String SELECT_ALL_FORUM = "select * from forum ";
 			  private static final String DELETE_FORUM_SQL = "delete from forum where title = ?;";
@@ -71,7 +71,11 @@ public class GuideServlet extends HttpServlet {
 		 case "/GuideServlet/update":
 			 updateForum(request, response);
 		 break;
+<<<<<<< HEAD
 		 //default:
+=======
+		// default:
+>>>>>>> branch 'forum' of https://github.com/yanjunXRE/maven-git-project.git
 		 case"/GuideServlet/dashboard":
 		 listForums(request, response);
 		 break;
@@ -141,6 +145,11 @@ public class GuideServlet extends HttpServlet {
 			request.setAttribute("forum", existingForum);
 			request.getRequestDispatcher("/forumEdit.jsp").forward(request, response);
 			}
+
+	
+
+	
+	
 	private void updateForum(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 			//Step 1: Retrieve value from the request
@@ -160,22 +169,23 @@ public class GuideServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			
-			 response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet/dashboard");
+			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
 			}
-	
 	private void deleteForum(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 			//Step 1: Retrieve value from the request
-			 String name = request.getParameter("title");
+			 String title = request.getParameter("title");
 			 //Step 2: Attempt connection with database and execute delete user SQL query
 			 try (Connection connection = getConnection(); PreparedStatement statement =
 			connection.prepareStatement(DELETE_FORUM_SQL);) {
-			 statement.setString(1, name);
+				 statement.setString(1, title);
 			 int i = statement.executeUpdate();
 			 }
 			 
-			 response.sendRedirect("http://localhost:8085/devopsproject/GuideServlet/dashboard");
+			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
 			}
+	
+
 	
 		
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

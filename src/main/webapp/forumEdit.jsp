@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<<<<<<< HEAD
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>User Management Application</title>
  <link rel="stylesheet"
@@ -65,5 +66,10 @@ value='${forum.type}' />" class="form-control" name="type">
 </div>
 </div>
 </div>
+=======
+</head>
+<body>
+
+>>>>>>> branch 'forum' of https://github.com/yanjunXRE/maven-git-project.git
 </body>
 </html>
