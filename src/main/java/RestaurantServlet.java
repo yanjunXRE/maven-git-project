@@ -44,7 +44,7 @@ public class RestaurantServlet extends HttpServlet {
 		String image = request.getParameter("image");
 		String phone = request.getParameter("phone");
 		String description = request.getParameter("description");
-		try {
+		try { 
 			 Class.forName("com.mysql.jdbc.Driver");
 			 Connection con = DriverManager.getConnection(
 			 "jdbc:mysql://localhost:3306/restaurantdetails", "root", "password");
@@ -59,10 +59,7 @@ public class RestaurantServlet extends HttpServlet {
 			 int i = ps.executeUpdate();
 			
 			 if (i > 0){
-			PrintWriter writer = response.getWriter();
-			writer.println("<h1>" + "You have successfully added a restaurant!" +
-			"</h1>");
-			writer.close();
+				 response.sendRedirect("http://localhost:8088/devopsproject/RestaurantV2Servlet/dashboard");
 			}
 			}
 			//Step 8: catch and print out any exception
