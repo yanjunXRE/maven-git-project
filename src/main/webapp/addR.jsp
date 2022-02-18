@@ -42,7 +42,7 @@
 						<tr>
 							<td><c:out value="${restaurant.name}" /></td>
 							<td><c:out value="${restaurant.address}" /></td>
-							<td><c:out value="${restaurant.image}" /></td>
+							<td><image  height="200px" width="300px" src="<c:out value="${restaurant.image}"/>"/></td>
 							<td><c:out value="${restaurant.phone}" /></td>
 							<td><c:out value="${restaurant.description}" /></td>
 							<!-- For each user in the database, Edit/Delete buttons which invokes the edit/delete functions -->
