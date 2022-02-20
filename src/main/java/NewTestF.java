@@ -22,7 +22,7 @@ public class NewTestF {
   public void checkText() {
 	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("text"));
-	  
+
 	  System.out.println("id text: "+we.getAttribute("placholder"));
 	  Assert.assertEquals(we.getAttribute("placeholder"), "Enter text");
   }
