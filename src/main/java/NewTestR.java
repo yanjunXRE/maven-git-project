@@ -64,10 +64,8 @@ public class NewTestR {
 	
 	@Test
 	public void checkSubmit() {
-		webDriver.findElement(By.xpath("//input[@name='Add']")).submit();
+		webDriver.findElement(By.id("description")).submit();
 	}
-	
-	
 
 	@BeforeTest
 	public void beforeTest() {
@@ -84,7 +82,7 @@ public class NewTestR {
 	@AfterTest
 	public void afterTest() {
 		// Quit the ChromeDriver and close all associated window at the end of test
-		//webDriver.quit();
+		webDriver.quit();
 	}
 
 }
