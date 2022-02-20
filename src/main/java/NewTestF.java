@@ -34,6 +34,10 @@ public class NewTestF {
 	  System.out.println("id type: "+we.getAttribute("placholder"));
 	  Assert.assertEquals(we.getAttribute("placeholder"), "Enter type of comment");
   }
+  @Test
+  public void checkZubmit() {
+	  webDriver.findElement(By.id("type")).submit();
+  }
   @BeforeTest
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver
