@@ -12,25 +12,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container"> 
+	<div class="container">
 		<h2>Add Restaurant</h2>
 		<form action="RestaurantServlet" method="post">
 			<div class="form-group">
-				<label for="name">Name:</label> <input type="text" class="form-control" id="name" placeholder="Enter Name"	name="name">
+				<label for="name">Name:</label> <input type="text"
+					class="form-control" id="name" placeholder="Enter Name" name="name">
 			</div>
 			<div class="form-group">
-				<label for="address">Address:</label> <input type="text" class="form-control" id="address" placeholder="Enter Address"	name="address">
+				<label for="address">Address:</label> <input type="text"
+					class="form-control" id="address" placeholder="Enter Address"
+					name="address">
 			</div>
 			<div class="form-group">
-				<label for="image">Image:</label> <input type="text" class="form-control" id="image" placeholder="Enter Image"	name="image">
+				<label for="image">Image:</label> <input type="text"
+					class="form-control" id="image" placeholder="Enter Image"
+					name="image">
 			</div>
 			<div class="form-group">
-				<label for="phone">Phone:</label> <input type="text" class="form-control" id="phone" placeholder="Enter Phone"	name="phone">
+				<label for="phone">Phone:</label> <input type="text"
+					class="form-control" id="phone" placeholder="Enter Phone"
+					name="phone">
 			</div>
 			<div class="form-group">
-				<label for="description">Description:</label> <input type="text" class="form-control" id="description" placeholder="Enter Description"	name="description">
+				<label for="description">Description:</label> <input type="text"
+					class="form-control" id="description"
+					placeholder="Enter Description" name="description">
 			</div>
-			<button  type="submit" class="btn btn-danger">Add</button>
+			<button type="submit" class="btn btn-danger">Add</button>
 
 		</form>
 	</div>

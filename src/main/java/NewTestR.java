@@ -66,7 +66,6 @@ public class NewTestR {
 	public void checkSubmit() {
 		webDriver.findElement(By.id("description")).submit();
 	}
-	
 
 	@BeforeTest
 	public void beforeTest() {
