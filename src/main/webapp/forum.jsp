@@ -13,7 +13,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 crossorigin="anonymous">
 </head>
 <body>
-<form action="http://localhost:8090/devopsproject/AddForum.jsp">
+<form action="http://localhost:8088/devopsproject/AddForum.jsp">
 <input type="submit" value="add new comment">
 </form>
 

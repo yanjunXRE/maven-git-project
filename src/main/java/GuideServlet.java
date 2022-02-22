@@ -167,7 +167,7 @@ public class GuideServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			
-			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
+			 response.sendRedirect("http://localhost:8088/devopsproject/GuideServlet/dashboard");
 			}
 	private void deleteForum(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
@@ -180,7 +180,7 @@ public class GuideServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			 
-			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
+			 response.sendRedirect("http://localhost:8088/devopsproject/GuideServlet/dashboard");
 			}
 	
 
