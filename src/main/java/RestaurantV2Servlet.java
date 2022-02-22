@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/RestaurantV2Servlet")
 public class RestaurantV2Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String jdbcURL = "jdbc:mysql://localhost:3306/restaurantdetails";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/restaurant_app";
 	private String jdbcUsername = "root";
 
 	private String jdbcPassword = "password";

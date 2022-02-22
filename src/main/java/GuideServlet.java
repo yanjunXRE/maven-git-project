@@ -25,7 +25,7 @@ import devopsproject.forum;
 public class GuideServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private String jdbcURL = "jdbc:mysql://localhost:3306/forum";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/restaurant_app";
 	 private String jdbcUsername = "root";
 	 private String jdbcPassword = "password";
 	 
