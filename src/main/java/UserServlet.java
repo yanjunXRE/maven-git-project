@@ -152,7 +152,7 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute("user", existingUser);
 		request.getRequestDispatcher("/userEdit.jsp").forward(request, response);
 		}else {
-			 response.sendRedirect("http://localhost:8080/devopsproject/login.jsp");
+			 response.sendRedirect("http://localhost:8088/devopsproject/login.jsp");
 		}
 				
 		}
@@ -178,7 +178,7 @@ public class UserServlet extends HttpServlet {
 		 int i = statement.executeUpdate();
 		 }
 		 //Step 3: redirect back to UserServlet (note: remember to change the url to your projectname)
-		 response.sendRedirect("http://localhost:8080/devopsproject/UserServlet/dashboard");
+		 response.sendRedirect("http://localhost:8088/devopsproject/UserServlet/dashboard");
 		}
 		
 		//method to delete user
@@ -193,7 +193,7 @@ public class UserServlet extends HttpServlet {
 		 int i = statement.executeUpdate();
 		 }
 		 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url toyour project name)
-		 response.sendRedirect("http://localhost:8080/devopsproject/UserServlet/dashboard");
+		 response.sendRedirect("http://localhost:8088/devopsproject/UserServlet/dashboard");
 		}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

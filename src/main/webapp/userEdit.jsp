@@ -16,7 +16,7 @@ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 <a class="navbar-brand"> User Management Application </a>
 </div>
 <ul class="navbar-nav">
-<li><a href="<%=request.getContextPath()%>/GuideServlet/dashboard"
+<li><a href="<%=request.getContextPath()%>/UserServlet/dashboard"
 class="nav-link">Back to Dashboard</a></li>
 </ul>
 </nav>
