@@ -1,4 +1,4 @@
-
+package test;
 import org.openqa.selenium.By;
 //import necessary Selenium WebDriver classes
 import org.openqa.selenium.WebDriver;
@@ -38,7 +38,7 @@ public class NewTest {
   public void beforeTest() {
 	  //Setting system properties of ChromeDriver
 	  //to amend directory path base on your local file path
-	  String chromeDriverDir = "C:\\Program Files\\Google\\Chrome\\chromedriver.exe";
+	  String chromeDriverDir = "C:\\Program Files (x86)\\Google\\Chrome\\chromedriver.exe";
 
 	  System.setProperty("webdriver.chrome.driver", chromeDriverDir);
 
