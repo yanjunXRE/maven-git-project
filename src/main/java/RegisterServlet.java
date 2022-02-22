@@ -67,7 +67,7 @@ public class RegisterServlet extends HttpServlet {
 //		"</h1>");
 		
 		//writer.close();
-			 response.sendRedirect("http://localhost:8080/devopsproject/login.jsp");
+			 response.sendRedirect("http://localhost:8088/devopsproject/login.jsp");
 		}
 		}
 		//Step 8: catch and print out any exception

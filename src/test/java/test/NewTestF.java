@@ -13,7 +13,7 @@ public class NewTestF {
 	private WebDriver webDriver;	
   @Test
   public void checkTitle() {
-	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
+	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("title"));
 	  
 	  System.out.println("id title: "+we.getAttribute("placholder"));
@@ -21,7 +21,7 @@ public class NewTestF {
   }
   @Test
   public void checkText() {
-	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
+	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("text"));
 
 	  System.out.println("id text: "+we.getAttribute("placholder"));
@@ -29,7 +29,7 @@ public class NewTestF {
   }
   @Test
   public void checkType() {
-	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
+	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("type"));
 	  
 	  System.out.println("id type: "+we.getAttribute("placholder"));
