@@ -55,7 +55,7 @@ public class NewTestF {
   @AfterTest
   public void afterTest() {
 	//Quit the ChromeDriver and close all associated window at the end of test
-	  //webDriver.quit();
+	webDriver.quit();
   }
 
 }
