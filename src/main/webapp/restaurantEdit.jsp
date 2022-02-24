@@ -17,10 +17,8 @@
 		<div>
 			<a class="navbar-brand"> Restaurant Management Application </a>
 		</div>
-		<ul class="navbar-nav">
-			<li><a
-				href="<%=request.getContextPath()%>/RestaurantV2Servlet/dashboard"
-				class="nav-link">Back to Dashboard</a></li>
+		<ul class="back">
+			<li><a href="<%=request.getContextPath()%>/RestaurantV2Servlet/dashboard" id="back">Back to Dashboard</a></li>
 		</ul>
 	</nav>
 	<div class="container col-md-6">
