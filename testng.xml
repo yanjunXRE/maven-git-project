@@ -9,6 +9,7 @@
       <class name="test.NewTest"/>
       <class name="test.NewTestR"/>
       <class name="test.NewTestFEdit"/>
+      <class name="test.NewTestFDelete"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
