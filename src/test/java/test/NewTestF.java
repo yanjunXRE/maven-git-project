@@ -27,6 +27,7 @@ public class NewTestF {
 	  System.out.println("id text: "+we.getAttribute("placholder"));
 	  Assert.assertEquals(we.getAttribute("placeholder"), "Enter text");
   }
+  
   @Test
   public void checkType() {
 	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
