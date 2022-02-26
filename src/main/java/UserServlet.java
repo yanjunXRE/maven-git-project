@@ -27,8 +27,8 @@ public class UserServlet extends HttpServlet {
     private String jdbcUsername = "root";
     private String jdbcPassword = "";
     //Step 2: Prepare list of SQL prepared statements to perform CRUD to our database
-    private static final String INSERT_USERS_SQL = "INSERT INTO user" + " (email,password) VALUES " + " (?, ?);";
-    private static final String SELECT_USER_BY_ID = "select email,password from user where email =?";
+   // private static final String INSERT_USERS_SQL = "INSERT INTO user" + " (email,password) VALUES " + " (?, ?);";
+ //   private static final String SELECT_USER_BY_ID = "select email,password from user where email =?";
     private static final String SELECT_USER_PASS = "select email,password from user where email =?&& password=?";
     private static final String SELECT_ALL_USERS = "select * from user ";
     private static final String DELETE_USERS_SQL = "delete from user where email = ?;";
@@ -152,7 +152,7 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute("user", existingUser);
 		request.getRequestDispatcher("/userEdit.jsp").forward(request, response);
 		}else {
-			 response.sendRedirect("http://localhost:8080/devopsproject/login.jsp");
+			 response.sendRedirect("http://localhost:8088/devopsproject/login.jsp");
 		}
 				
 		}
@@ -178,7 +178,7 @@ public class UserServlet extends HttpServlet {
 		 int i = statement.executeUpdate();
 		 }
 		 //Step 3: redirect back to UserServlet (note: remember to change the url to your projectname)
-		 response.sendRedirect("http://localhost:8080/devopsproject/UserServlet/dashboard");
+		 response.sendRedirect("http://localhost:8088/devopsproject/UserServlet/dashboard");
 		}
 		
 		//method to delete user
@@ -193,7 +193,7 @@ public class UserServlet extends HttpServlet {
 		 int i = statement.executeUpdate();
 		 }
 		 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url toyour project name)
-		 response.sendRedirect("http://localhost:8080/devopsproject/UserServlet/dashboard");
+		 response.sendRedirect("http://localhost:8088/devopsproject/UserServlet/dashboard");
 		}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
