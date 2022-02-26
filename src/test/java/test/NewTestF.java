@@ -1,3 +1,4 @@
+package test;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebDriver;
@@ -12,7 +13,7 @@ public class NewTestF {
 	private WebDriver webDriver;	
   @Test
   public void checkTitle() {
-	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
+	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("title"));
 	  
 	  System.out.println("id title: "+we.getAttribute("placholder"));
@@ -20,15 +21,16 @@ public class NewTestF {
   }
   @Test
   public void checkText() {
-	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
+	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("text"));
 
 	  System.out.println("id text: "+we.getAttribute("placholder"));
 	  Assert.assertEquals(we.getAttribute("placeholder"), "Enter text");
   }
+  
   @Test
   public void checkType() {
-	  webDriver.navigate().to("http://localhost:8090/devopsproject/AddForum.jsp");
+	  webDriver.navigate().to("http://localhost:8088/devopsproject/AddForum.jsp");
 	  WebElement we =  webDriver.findElement(By.id("type"));
 	  
 	  System.out.println("id type: "+we.getAttribute("placholder"));
@@ -54,7 +56,7 @@ public class NewTestF {
   @AfterTest
   public void afterTest() {
 	//Quit the ChromeDriver and close all associated window at the end of test
-	  //webDriver.quit();
+	webDriver.quit();
   }
 
 }

@@ -20,7 +20,7 @@
 			<hr>
 			<div class="container text-left">
 				<!-- Add new user button redirects to the register.jsp page -->
-				<a href="<%=request.getContextPath()%>/restaurantList.jsp"
+				<a id="successBut" href="<%=request.getContextPath()%>/restaurantList.jsp"
 					class="btn btn-success">Add New Restaurant</a>
 			</div>
 			<br>
@@ -46,9 +46,11 @@
 							<td><c:out value="${restaurant.phone}" /></td>
 							<td><c:out value="${restaurant.description}" /></td>
 							<!-- For each user in the database, Edit/Delete buttons which invokes the edit/delete functions -->
-							<td><a href="edit?name=<c:out value='${restaurant.name}'/>">Edit</a>
-								&nbsp;&nbsp;&nbsp;&nbsp; <a	href="delete?name=<c:out
-value='${restaurant.name}' />">Delete</a></td>
+							<td>
+							<a id="edit" href="edit?name=<c:out value='${restaurant.name}'/>">Edit</a>
+								&nbsp;&nbsp;&nbsp;&nbsp; 
+							<a id="delete" href="delete?name=<c:out value='${restaurant.name}' />">Delete</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

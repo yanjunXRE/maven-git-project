@@ -25,7 +25,7 @@ import devopsproject.forum;
 public class GuideServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private String jdbcURL = "jdbc:mysql://localhost:3306/forum";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/restaurant_app";
 	 private String jdbcUsername = "root";
 	 private String jdbcPassword = "password";
 	 
@@ -167,7 +167,7 @@ public class GuideServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			
-			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
+			 response.sendRedirect("http://localhost:8088/devopsproject/GuideServlet/dashboard");
 			}
 	private void deleteForum(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
@@ -180,7 +180,7 @@ public class GuideServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			 
-			 response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
+			 response.sendRedirect("http://localhost:8088/devopsproject/GuideServlet/dashboard");
 			}
 	
 

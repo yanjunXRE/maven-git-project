@@ -47,7 +47,7 @@ public class RestaurantServlet extends HttpServlet {
 		try { 
 			 Class.forName("com.mysql.jdbc.Driver");
 			 Connection con = DriverManager.getConnection(
-			 "jdbc:mysql://localhost:3306/restaurantdetails", "root", "password");
+			 "jdbc:mysql://localhost:3306/restaurant_app", "root", "password");
 			 PreparedStatement ps = con.prepareStatement("insert into restaurantdetails(name,address,image,phone,description) values(?,?,?,?,?)");
 			 ps.setString(1, name);
 			 ps.setString(2, address);

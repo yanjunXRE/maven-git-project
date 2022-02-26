@@ -46,7 +46,7 @@ public class ForumServlet extends HttpServlet {
 		try {
 			 Class.forName("com.mysql.cj.jdbc.Driver");
 			 Connection con = DriverManager.getConnection(
-			 "jdbc:mysql://localhost:3306/forum", "root", "password");
+			 "jdbc:mysql://localhost:3306/restaurant_app", "root", "password");
 			
 			 PreparedStatement ps = con.prepareStatement("insert into forum(title,text,type) values(?,?,?)");
 			
@@ -60,7 +60,7 @@ public class ForumServlet extends HttpServlet {
 			
 			 if (i > 0){
 			
-			response.sendRedirect("http://localhost:8090/devopsproject/GuideServlet/dashboard");
+			response.sendRedirect("http://localhost:8088/devopsproject/GuideServlet/dashboard");
 			}
 			}
 			//Step 8: catch and print out any exception

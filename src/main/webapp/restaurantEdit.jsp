@@ -17,10 +17,8 @@
 		<div>
 			<a class="navbar-brand"> Restaurant Management Application </a>
 		</div>
-		<ul class="navbar-nav">
-			<li><a
-				href="<%=request.getContextPath()%>/RestaurantV2Servlet/dashboard"
-				class="nav-link">Back to Dashboard</a></li>
+		<ul class="back">
+			<li><a href="<%=request.getContextPath()%>/RestaurantV2Servlet/dashboard" id="back">Back to Dashboard</a></li>
 		</ul>
 	</nav>
 	<div class="container col-md-6">
@@ -42,19 +40,19 @@
 					<input type="hidden" name="oriName" value="<c:out value='${restaurant.name}' />" />
 				</c:if>
 				<fieldset class="form-group">
-					<label>Name</label> <input type="text"	value="<c:out value='${restaurant.name}' />" class="form-control" name="name" required="required">
+					<label>Name</label> <input type="text"	value="<c:out value='${restaurant.name}' />" class="form-control" name="name" id="name" required="required">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Address</label> <input type="text" value="<c:out value='${restaurant.address}' />" class="form-control" name="address">
+					<label>Address</label> <input type="text" value="<c:out value='${restaurant.address}' />" class="form-control" id="address" name="address">
 				</fieldset>
 				<fieldset class="form-group">
-					<label>Image</label> <input type="text" value="<c:out value='${restaurant.image}' />" class="form-control" name="image">
+					<label>Image</label> <input type="text" value="<c:out value='${restaurant.image}' />" class="form-control" id="image" name="image">
 				</fieldset>
 				<fieldset class="form-group">
-					<label> Phone</label> <input type="text"	value="<c:out value='${restaurant.phone}' />" class="form-control" name="phone">
+					<label> Phone</label> <input type="text"	value="<c:out value='${restaurant.phone}' />" class="form-control" id="phone" name="phone">
 				</fieldset>
 				<fieldset class="form-group">
-					<label> Description</label> <input type="text"	value="<c:out value='${restaurant.description}' />" class="form-control" name="description">
+					<label> Description</label> <input type="text"	value="<c:out value='${restaurant.description}' />" class="form-control" id="description" name="description">
 				</fieldset>
 				<button type="submit" class="btn btn-success">Save</button>
 				</form>

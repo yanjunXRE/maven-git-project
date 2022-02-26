@@ -48,15 +48,15 @@ value='${forum.title}' />" />
 </c:if>
 <fieldset class="form-group">
 <label>Title</label> <input type="text" value="<c:out
-value='${forum.title}' />" class="form-control" name="title" required="required">
+value='${forum.title}' />" class="form-control" name="title" required="required" id="title">
 </fieldset>
 <fieldset class="form-group">
 <label>text</label> <input type="text" value="<c:out
-value='${forum.text}' />" class="form-control" name="text">
+value='${forum.text}' />" class="form-control" name="text" id = "text">
 </fieldset>
 <fieldset class="form-group">
 <label>type</label> <input type="text" value="<c:out
-value='${forum.type}' />" class="form-control" name="type">
+value='${forum.type}' />" class="form-control" name="type" id="type">
 </fieldset>
 
 

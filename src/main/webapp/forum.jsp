@@ -13,8 +13,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 crossorigin="anonymous">
 </head>
 <body>
-<form action="http://localhost:8090/devopsproject/AddForum.jsp">
-<input type="submit" value="add new comment">
+<form action="http://localhost:8088/devopsproject/AddForum.jsp">
+<input type="submit" id="addButton" value="add new comment">
 </form>
 
 <div class="row">
@@ -57,9 +57,9 @@ information accordingly -->
 <!-- For each user in the database, Edit/Delete
 buttons which invokes the edit/delete functions -->
 <td>
-<a href="edit?title=<c:out value='${forum.title}'
+<a id="edit" href="edit?title=<c:out value='${forum.title}'
 />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="delete?title=<c:out
+<a id= "delete" href="delete?title=<c:out
 value='${forum.title}' />">Delete</a>
 </td>
 </tr>

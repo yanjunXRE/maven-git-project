@@ -1,3 +1,4 @@
+package test;
 import org.openqa.selenium.By;
 //import necessary Selenium WebDriver classes
 import org.openqa.selenium.WebDriver;
@@ -66,6 +67,7 @@ public class NewTestR {
 	public void checkSubmit() {
 		webDriver.findElement(By.id("description")).submit();
 	}
+
 
 	@BeforeTest
 	public void beforeTest() {
